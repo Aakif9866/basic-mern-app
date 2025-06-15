@@ -22,10 +22,10 @@ if(process.env.NODE_ENV !== "production"){
 }
 
 
-
+app.use(express.json())
 const port = process.env.PORT || 5001
 
-app.use(express.json())
+
 
 // this middleware will parse the json bodies
 // above is a middleware
@@ -33,7 +33,7 @@ app.use(express.json())
 app.use("/api/notes",notesRoutes)
 
 
-if(process.env.NODE_ENV==="production"){
+if(process.env.NODE_ENV!=="production"){
 
     app.use(express.static(path.join(__dirname,"../frontend/dist")))
 
