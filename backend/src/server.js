@@ -23,7 +23,7 @@ if(process.env.NODE_ENV !== "production"){
 
 
 
-const port = process.env.PORT
+const port = process.env.PORT || 5001
 
 app.use(express.json())
 
